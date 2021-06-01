@@ -1,29 +1,21 @@
 <template>
-  <div class="usuario">
-    <h2>Usuarios</h2>
-    <button sucesso @click="irParaInicio">Voltar</button>
+  <div class="usuario-detalhe">
+    <h3>Usuario detalhe</h3>
     <hr>
-    <router-view></router-view>
+    <p><strong>Codigo:</strong>{{id}}</p>
+
   </div>
 </template>
 
 <script>
 export default {
-//props:['id'], 
+props:['id'], 
 /*   data(){
     return{
       id:this.$route.params.id
     }
   },
- */  methods:{
-    irParaInicio(){
-      //pode usar assim
-      //this.$router.push('/')
-
-      //ou assim
-      this.$router.push({path:'/'})
-    }
-  },
+ */ 
 /*   watch:{
     //verificar mudanças no componente durante os links
     //to = parametro novo
@@ -32,7 +24,8 @@ export default {
       this.id = to.params.id
     }
   }
- */}
+*/
+}
 </script>
 
 <style>
