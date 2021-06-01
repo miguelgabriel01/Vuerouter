@@ -8,7 +8,7 @@ import UsuarioEditar from './components/usuario/UsuarioEditar.vue'
 
 Vue.use(Router)
 
-export default new Router({
+const router =  new Router({
   mode:'history',
   routes:[{
     path: '/',//informa que o /(home) vai ser o componente Inicio
@@ -21,7 +21,10 @@ export default new Router({
     children:[
      //os filhos do componentes
      {path:'', component: UsuarioLista}, 
-     {path:':id', component: UsuarioDetalhe, props:true},
+     {path:':id', component: UsuarioDetalhe, props:true, beforeEnter:(to,from,next) => {
+       console.log('antes da rota --> usuario detalhe')
+       next()
+     }},
      {path:':id/editar', component:UsuarioEditar, props:true, name:"editarUsuario"} 
     ]
   },
@@ -30,3 +33,17 @@ export default new Router({
     redirect:'/'//vai ser redirecionada para a home
   }]
 })
+
+router.beforeEach((to,from,next) => {
+  console.log("NAtes das rotas --> global");
+/*   //exemplo de como fazer um usuario n sair de detrminada pag
+  if(to.path !== '/usuario'){
+    next('/usuario')
+  }else{
+    next()
+  }
+ */
+next()
+})
+
+export default router
