@@ -4,10 +4,11 @@ import Inicio from './components/Inicio.vue'
 import Usuario from './components/usuario/Usuario.vue'
 import UsuarioLista from './components/usuario/UsuarioLista.vue'
 import UsuarioDetalhe from './components/usuario/UsuarioDetalhe.vue'
-import UsuarioEditar from './components/usuario/UsuarioEditar.vue'
+//import UsuarioEditar from './components/usuario/UsuarioEditar.vue'
 
 Vue.use(Router)
 
+const UsuarioEditar = () => import('./components/usuario/UsuarioEditar.vue')
 const router =  new Router({
   mode:'history',
   routes:[{
