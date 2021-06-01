@@ -14,5 +14,6 @@ export default new Router({
   {
     path:'/usuario/:id',
     component: Usuario,
+    props:true,//os parametros serão passados como propiedade
   }]
 })

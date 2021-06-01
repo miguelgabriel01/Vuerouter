@@ -9,12 +9,13 @@
 
 <script>
 export default {
-  data(){
+props:['id'],
+/*   data(){
     return{
       id:this.$route.params.id
     }
   },
-  methods:{
+ */  methods:{
     irParaInicio(){
       //pode usar assim
       //this.$router.push('/')
@@ -23,7 +24,7 @@ export default {
       this.$router.push({path:'/'})
     }
   },
-  watch:{
+/*   watch:{
     //verificar mudanças no componente durante os links
     //to = parametro novo
     //from = parametro antigo
@@ -31,7 +32,7 @@ export default {
       this.id = to.params.id
     }
   }
-}
+ */}
 </script>
 
 <style>
