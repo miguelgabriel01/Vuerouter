@@ -24,5 +24,9 @@ export default new Router({
      {path:':id', component: UsuarioDetalhe, props:true},
      {path:':id/editar', component:UsuarioEditar, props:true, name:"editarUsuario"} 
     ]
+  },
+  {
+    path:'*',//qualquer rota desconhecida
+    redirect:'/'//vai ser redirecionada para a home
   }]
 })
