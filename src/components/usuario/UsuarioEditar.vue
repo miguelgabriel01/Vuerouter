@@ -4,7 +4,8 @@
     <hr>
     <p><strong>Codigo:</strong>{{id}}</p>
     <p><strong>Codigo:</strong>{{$route.params.id}}</p>
-
+    <small>completo: {{$route.query.complete ? ' sim': ' não'}}</small><br>
+    <small>Lingua: {{$route.query.lingua}}</small>
   </div>
 </template>
 
